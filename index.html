@@ -1,0 +1,33 @@
+<html>
+  <head>
+    
+  </head>
+  <marquee id="text" scrollamount="10" style="position:fixed;top:100;color:white;font-weight:bold;font-size:40;" direction="right" width="256">Balloon</marquee>
+  <body onload="myCanvas()" bgcolor="gray">
+    <canvas id="myCanvas" width="256" height="256" style="border:2px solid #000000;">
+    <img src="toolgun.png" id='tool'>
+    
+    </canvas>
+    <br>
+    <input type="text" id="toolinput">
+    <br>
+    <button onclick="changeTool()">Input Text</button>
+  </body>
+  <script>
+    function myCanvas() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("tool");
+  ctx.drawImage(img,0,0);
+}
+
+    function changeTool() {
+
+      var x = document.getElementById('text')
+      var y = document.getElementById('toolinput').value
+
+      x.innerHTML = y;
+
+    }
+  </script>
+</html>
